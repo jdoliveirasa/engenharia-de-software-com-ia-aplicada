@@ -1,0 +1,15 @@
+# Dependencies
+node_modules/
+
+# Build
+.next/
+
+# Environment
+.env.local
+.env*.local
+
+# SQLite
+*.sqlite
+
+# OS
+.DS_Store
