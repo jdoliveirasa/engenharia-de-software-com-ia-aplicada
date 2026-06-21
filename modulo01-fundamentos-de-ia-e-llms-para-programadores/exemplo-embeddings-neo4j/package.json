@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "main": "src/index.ts",
   "scripts": {
-    "start": "node --env-file .env --experimental-strip-types src/index.ts",
-    "dev": "node --no-warnings --env-file .env --watch --experimental-strip-types src/index.ts",
+    "start": "node --dns-result-order=ipv4first --env-file .env --experimental-strip-types src/index.ts",
+    "dev": "node --dns-result-order=ipv4first --no-warnings --env-file .env --watch --experimental-strip-types src/index.ts",
     "infra:up": "docker-compose up -d --wait",
     "infra:down": "docker-compose down --volumes"
   },
