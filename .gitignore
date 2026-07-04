@@ -141,3 +141,7 @@ vite.config.ts.timestamp-*
 
 # Windows Zone Identifier files (created when downloading from the internet)
 *:Zone.Identifier
+
+**/neo4j/data/
+**/neo4j/logs/
+**/neo4j/import/
