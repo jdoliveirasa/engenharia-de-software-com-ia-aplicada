@@ -145,3 +145,5 @@ vite.config.ts.timestamp-*
 **/neo4j/data/
 **/neo4j/logs/
 **/neo4j/import/
+
+./modulo01-fundamentos-de-ia-e-llms-para-programadores/exemplo-embeddings-neo4j-rag/neo4j/
