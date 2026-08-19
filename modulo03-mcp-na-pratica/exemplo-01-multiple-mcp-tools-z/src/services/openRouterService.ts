@@ -1,7 +1,7 @@
 import { ChatOpenAI } from '@langchain/openai';
 import { config, type ModelConfig } from '../config.ts';
 import { SystemMessage, HumanMessage, BaseMessage, AIMessage } from '@langchain/core/messages';
-import { createAgent, providerStrategy } from 'langchain';
+import { createAgent, toolStrategy } from 'langchain';
 import { getMCPTools } from './mcpService.ts';
 import { z } from 'zod/v3';
 import { type ChatGeneration } from '@langchain/core/outputs';
@@ -33,6 +33,7 @@ export class OpenRouterService {
             modelKwargs: {
                 models: this.config.models,
                 provider: this.config.provider,
+                reasoning: { effort: 'low' },
             },
         });
     }
@@ -50,7 +51,7 @@ export class OpenRouterService {
         schema?: z.ZodSchema<T>,
     ): Promise<{ data?: T | string; }> {
         const agentConfig = schema
-            ? { responseFormat: providerStrategy(schema), tools: [] }
+            ? { responseFormat: toolStrategy(schema), tools: [] }
             : { tools: await this.#getTools() };
 
         const agent = createAgent({

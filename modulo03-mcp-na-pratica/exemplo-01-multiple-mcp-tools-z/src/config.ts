@@ -22,7 +22,9 @@ export const config: ModelConfig = {
   httpReferer: '',
   xTitle: 'IA Devs - Transforming Services into Tools',
   models: [
-    'arcee-ai/trinity-large-preview:free',
+    'nvidia/nemotron-nano-9b-v2:free',
+    'nvidia/nemotron-3-super-120b-a12b:free',
+    'nvidia/nemotron-3-nano-30b-a3b:free',
   ],
   provider: {
     sort: {
@@ -31,5 +33,5 @@ export const config: ModelConfig = {
     },
   },
   temperature: 0.7,
-  maxTokens: 2048,
+  maxTokens: 8192,
 };
